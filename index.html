@@ -7,69 +7,283 @@
   <title>Home is Here</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: #f4f2ed;
       color: #111;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    main {
+    /* -------------------------
+       TOP
+    ------------------------- */
+
+    .top {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: 8vw;
-      box-sizing: border-box;
+      justify-content: space-between;
+      padding: 7vw;
     }
 
     h1 {
-      font-size: clamp(32px, 6vw, 80px);
+      font-size: clamp(36px, 7vw, 90px);
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .intro {
+      font-size: clamp(18px, 2.4vw, 30px);
+      line-height: 1.7;
+      margin-top: 60px;
+    }
+
+    /* -------------------------
+       MENU
+    ------------------------- */
+
+    .menu {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      padding-top: 80px;
+    }
+
+    .menu a {
+      color: #111;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+    }
+
+    .menu a:hover {
+      opacity: 0.5;
+    }
+
+    /* -------------------------
+       SECTIONS
+    ------------------------- */
+
+    section {
+      min-height: 100vh;
+      padding: 8vw 7vw;
+      border-top: 1px solid #111;
+    }
+
+    section h2 {
+      font-size: clamp(30px, 5vw, 64px);
       font-weight: normal;
       margin: 0 0 60px;
     }
 
-    .intro {
-      font-size: clamp(18px, 2.5vw, 32px);
-      line-height: 1.7;
+    /* -------------------------
+       LIVE
+    ------------------------- */
+
+    .live-item {
+      margin-bottom: 40px;
+      line-height: 1.8;
     }
 
-    nav {
-      margin-top: 80px;
+    /* -------------------------
+       ARCHIVE
+    ------------------------- */
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .archive-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* -------------------------
+       MUSIC / VIDEO
+    ------------------------- */
+
+    .link-list {
       display: flex;
-      gap: 30px;
+      flex-direction: column;
+      gap: 20px;
     }
 
-    nav a {
+    .link-list a {
       color: #111;
+      font-size: clamp(20px, 3vw, 38px);
       text-decoration: none;
-      font-size: 14px;
+    }
+
+    .link-list a:hover {
+      opacity: 0.5;
+    }
+
+    /* -------------------------
+       MOBILE
+    ------------------------- */
+
+    @media (max-width: 700px) {
+
+      .top {
+        padding: 30px 24px;
+      }
+
+      section {
+        padding: 70px 24px;
+      }
+
+      .menu {
+        gap: 18px;
+      }
+
+      .archive-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
+
 <body>
 
-  <main>
+  <!-- =========================
+       TOP
+  ========================== -->
 
-    <h1>Home is Here</h1>
+  <main class="top">
 
-    <div class="intro">
-      We are Home is Here.<br><br>
+    <div>
 
-      We play music. We perform live.<br><br>
+      <h1>Home is Here</h1>
 
-      Thank you.<br>
-      Goodbye &amp; good night.
+      <div class="intro">
+        We are Home is Here.<br><br>
+
+        We play music. We perform live.<br><br>
+
+        Thank you.<br>
+        Goodbye &amp; good night.
+      </div>
+
     </div>
 
-    <nav>
-      <a href="#">LIVE</a>
-      <a href="#">MUSIC</a>
-      <a href="#">CONTACT</a>
+
+    <nav class="menu">
+      <a href="#live">LIVE</a>
+      <a href="#archive">ARCHIVE</a>
+      <a href="#music">MUSIC</a>
+      <a href="#video">VIDEO</a>
     </nav>
 
   </main>
+
+
+  <!-- =========================
+       LIVE
+  ========================== -->
+
+  <section id="live">
+
+    <h2>LIVE</h2>
+
+    <div class="live-item">
+      <strong>2026.11.11</strong><br>
+      live house nano<br>
+      Home is Here 1st EP “開閉” Release Party<br>
+      「心の家（kocorono uchi）」<br>
+      OPEN 18:30 / START 19:00
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ARCHIVE
+  ========================== -->
+
+  <section id="archive">
+
+    <h2>ARCHIVE</h2>
+
+    <div class="archive-grid">
+
+      <!--
+      ↓↓↓ ここに写真を追加していきます ↓↓↓
+
+      例：
+      <img src="images/photo1.jpg" alt="">
+      -->
+
+      <img src="images/photo1.jpg" alt="">
+      <img src="images/photo2.jpg" alt="">
+      <img src="images/photo3.jpg" alt="">
+      <img src="images/photo4.jpg" alt="">
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MUSIC
+  ========================== -->
+
+  <section id="music">
+
+    <h2>MUSIC</h2>
+
+    <div class="link-list">
+
+      <!-- URLはあとで本物に変更 -->
+
+      <a href="#" target="_blank">
+        TuneCore
+      </a>
+
+      <a href="#" target="_blank">
+        Spotify
+      </a>
+
+      <a href="#" target="_blank">
+        Apple Music
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       VIDEO
+  ========================== -->
+
+  <section id="video">
+
+    <h2>VIDEO</h2>
+
+    <div class="link-list">
+
+      <!-- YouTube URLをあとで入れる -->
+
+      <a href="#" target="_blank">
+        YouTube
+      </a>
+
+    </div>
+
+  </section>
+
 
 </body>
 </html>
