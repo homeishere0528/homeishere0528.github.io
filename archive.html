@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARCHIVE - Home is Here</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{background:#d8cfad;color:#111;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+header{padding:32px 5vw 0;position:relative;z-index:20}
+.back{color:#111;text-decoration:none;font-size:12px;letter-spacing:.14em}
+h1{margin:42px 0 0;font-size:clamp(38px,6vw,86px);font-weight:400}
+.wall{position:relative;min-height:6000px;padding-top:50px}
+.photo{
+  position:relative;display:block;left:var(--l);margin:25px 0 70px;
+  padding:0;border:0;background:transparent;transform:rotate(var(--r));
+  cursor:zoom-in;transition:transform .15s ease;z-index:1
+}
+.photo:hover{transform:rotate(var(--r)) scale(1.015);z-index:4}
+.photo img{width:100%;height:auto;display:block}
+.photo.wide{width:min(58vw,850px)}
+.photo.mid{width:min(43vw,620px)}
+.photo.small{width:min(29vw,430px)}
+.photo.portrait{width:min(32vw,470px)}
+.photo.square{width:min(35vw,510px)}
+.viewer{
+  position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:1000;
+  display:none;align-items:center;justify-content:center;padding:22px;cursor:zoom-out
+}
+.viewer.open{display:flex}
+.viewer img{max-width:94vw;max-height:94vh;object-fit:contain}
+.close{position:fixed;right:20px;top:15px;border:0;background:none;color:white;font-size:32px;cursor:pointer}
+@media(max-width:700px){
+ header{padding:24px 22px 0}
+ .wall{min-height:4600px;padding-top:35px}
+ .photo{margin-bottom:52px}
+ .photo.wide{width:82vw}.photo.mid{width:68vw}.photo.small{width:48vw}
+ .photo.portrait{width:58vw}.photo.square{width:61vw}
+ .photo:nth-child(3n+1){left:5vw!important}
+ .photo:nth-child(3n+2){left:29vw!important}
+ .photo:nth-child(3n){left:13vw!important}
+}
+</style>
+</head>
+<body>
+<header>
+<a class="back" href="index.html">← HOME</a>
+<h1>ARCHIVE</h1>
+</header>
+<main class="wall">
+<button class="photo wide" style="--r:-2deg;--l:2vw" data-src="archive-01.jpg"><img src="archive-01.jpg" alt="" loading="lazy"></button>
+<button class="photo mid" style="--r:3deg;--l:44vw" data-src="archive-02.jpg"><img src="archive-02.jpg" alt="" loading="lazy"></button>
+<button class="photo wide" style="--r:-1deg;--l:12vw" data-src="archive-03.jpg"><img src="archive-03.jpg" alt="" loading="lazy"></button>
+<button class="photo small" style="--r:4deg;--l:63vw" data-src="archive-04.jpg"><img src="archive-04.jpg" alt="" loading="lazy"></button>
+<button class="photo mid" style="--r:-3deg;--l:5vw" data-src="archive-05.jpg"><img src="archive-05.jpg" alt="" loading="lazy"></button>
+<button class="photo small" style="--r:2deg;--l:56vw" data-src="archive-06.jpeg"><img src="archive-06.jpeg" alt="" loading="lazy"></button>
+<button class="photo portrait" style="--r:-2deg;--l:14vw" data-src="archive-07.jpg"><img src="archive-07.jpg" alt="" loading="lazy"></button>
+<button class="photo portrait" style="--r:3deg;--l:64vw" data-src="archive-08.png"><img src="archive-08.png" alt="" loading="lazy"></button>
+<button class="photo wide" style="--r:1deg;--l:27vw" data-src="archive-09.jpeg"><img src="archive-09.jpeg" alt="" loading="lazy"></button>
+<button class="photo portrait" style="--r:-4deg;--l:5vw" data-src="archive-10.jpg"><img src="archive-10.jpg" alt="" loading="lazy"></button>
+<button class="photo wide" style="--r:2deg;--l:38vw" data-src="archive-11.jpg"><img src="archive-11.jpg" alt="" loading="lazy"></button>
+<button class="photo square" style="--r:-2deg;--l:10vw" data-src="archive-12.jpg"><img src="archive-12.jpg" alt="" loading="lazy"></button>
+<button class="photo wide" style="--r:4deg;--l:50vw" data-src="archive-13.jpg"><img src="archive-13.jpg" alt="" loading="lazy"></button>
+<button class="photo square" style="--r:-3deg;--l:25vw" data-src="archive-14.jpg"><img src="archive-14.jpg" alt="" loading="lazy"></button>
+<button class="photo square" style="--r:2deg;--l:61vw" data-src="archive-15.jpeg"><img src="archive-15.jpeg" alt="" loading="lazy"></button>
+<button class="photo wide" style="--r:-2deg;--l:4vw" data-src="archive-16.jpeg"><img src="archive-16.jpeg" alt="" loading="lazy"></button>
+<button class="photo square" style="--r:3deg;--l:46vw" data-src="archive-17.jpg"><img src="archive-17.jpg" alt="" loading="lazy"></button>
+<button class="photo square" style="--r:-4deg;--l:17vw" data-src="archive-18.jpg"><img src="archive-18.jpg" alt="" loading="lazy"></button>
+<button class="photo portrait" style="--r:2deg;--l:58vw" data-src="archive-19.jpeg"><img src="archive-19.jpeg" alt="" loading="lazy"></button>
+<button class="photo wide" style="--r:-1deg;--l:8vw" data-src="archive-20.jpg"><img src="archive-20.jpg" alt="" loading="lazy"></button>
+</main>
+<div class="viewer" id="viewer">
+<button class="close" aria-label="close">×</button>
+<img id="viewerImage" src="" alt="">
+</div>
+<script>
+const viewer=document.getElementById("viewer");
+const viewerImage=document.getElementById("viewerImage");
+document.querySelectorAll(".photo").forEach(p=>{
+ p.addEventListener("click",()=>{
+   viewerImage.src=p.dataset.src;
+   viewer.classList.add("open");
+ });
+});
+function closeViewer(){viewer.classList.remove("open");viewerImage.src="";}
+viewer.addEventListener("click",closeViewer);
+document.querySelector(".close").addEventListener("click",e=>{e.stopPropagation();closeViewer();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeViewer();});
+</script>
+</body>
+</html>
