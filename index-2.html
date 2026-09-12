@@ -53,11 +53,18 @@ body{overflow-x:hidden}
 
 <script>
 window.addEventListener("load",()=>{
-  const opening=document.getElementById("opening");
-  setTimeout(()=>{
-    opening.classList.add("hide");
-    setTimeout(()=>opening.remove(),700);
-  },3000);
+  const opening = document.getElementById("opening");
+  const hasSeenOpening = sessionStorage.getItem("hasSeenOpening");
+
+  if (hasSeenOpening) {
+    opening.remove();
+  } else {
+    sessionStorage.setItem("hasSeenOpening", "true");
+    setTimeout(()=>{
+      opening.classList.add("hide");
+      setTimeout(()=>opening.remove(),700);
+    },3000);
+  }
 });
 </script>
 </body>
