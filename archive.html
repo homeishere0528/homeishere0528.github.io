@@ -1,73 +1,368 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5"><title>ARCHIVE - Home is Here</title><style>
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{background:#d8cfad;color:#111;font-family:Arial,Helvetica,sans-serif;touch-action:none;user-select:none}.topbar{position:fixed;inset:0 0 auto 0;height:74px;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 28px;pointer-events:none}.topbar a,.hint{pointer-events:auto;color:#111;text-decoration:none;font-size:11px;letter-spacing:.14em;background:rgba(216,207,173,.72);padding:8px 10px}.viewport{position:fixed;inset:0;overflow:hidden;cursor:grab}.viewport.dragging{cursor:grabbing}.world{position:absolute;left:0;top:0;width:5600px;height:3900px;transform-origin:0 0;will-change:transform}.photo{position:absolute;padding:0;border:0;background:transparent;cursor:zoom-in;transform:rotate(var(--r));transition:transform .12s ease;box-shadow:none}.photo:hover{transform:rotate(var(--r)) scale(1.035);z-index:20}.photo img{display:block;width:100%;height:auto;pointer-events:none}.viewer{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.91);display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}.viewer.open{display:flex}.viewer img{max-width:95vw;max-height:94vh;object-fit:contain}.close{position:fixed;top:15px;right:20px;border:0;background:none;color:#fff;font-size:32px;cursor:pointer}.controls{position:fixed;right:20px;bottom:18px;z-index:60;display:flex;gap:6px}.controls button{width:38px;height:38px;border:1px solid rgba(0,0,0,.45);background:rgba(216,207,173,.82);font-size:19px;cursor:pointer}@media(max-width:700px){.topbar{height:60px;padding:0 14px}.topbar a,.hint{font-size:9px;padding:7px 8px}.controls{right:12px;bottom:12px}.controls button{width:36px;height:36px}}</style></head><body>
-<div class="topbar"><a href="index.html">← HOME</a><div class="hint">DRAG TO EXPLORE</div></div><div class="viewport" id="viewport"><div class="world" id="world"><button class="photo" data-src="archive-media/001.jpg" aria-label="6A596021-47DB-4EB1-AF08-70D259C4B341.JPG" style="left:409px;top:-1px;width:328px;--r:-4.45deg"><img src="archive-media/001.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/002.jpeg" aria-label="81E7D007-E77D-40EA-91ED-76DAEA8B6F09.JPEG" style="left:855px;top:76px;width:478px;--r:0.82deg"><img src="archive-media/002.jpeg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/003.jpg" aria-label="DSC04334.JPG" style="left:1609px;top:79px;width:478px;--r:-3.36deg"><img src="archive-media/003.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/004.jpg" aria-label="DSC04418.JPG" style="left:2145px;top:73px;width:568px;--r:1.92deg"><img src="archive-media/004.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/005.jpg" aria-label="DSC04515.JPG" style="left:2892px;top:97px;width:561px;--r:1.97deg"><img src="archive-media/005.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/006.jpeg" aria-label="DSC07124.JPEG" style="left:3576px;top:33px;width:529px;--r:-1.18deg"><img src="archive-media/006.jpeg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/007.jpeg" aria-label="DSC07127.JPEG" style="left:4276px;top:44px;width:644px;--r:-5.16deg"><img src="archive-media/007.jpeg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/008.jpeg" aria-label="DSC07186.JPEG" style="left:5166px;top:11px;width:516px;--r:2.78deg"><img src="archive-media/008.jpeg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/009.jpg" aria-label="IMG_0694.JPG" style="left:106px;top:533px;width:298px;--r:-1.52deg"><img src="archive-media/009.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/010.jpg" aria-label="IMG_0745.JPG" style="left:827px;top:499px;width:434px;--r:0.62deg"><img src="archive-media/010.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/011.jpg" aria-label="IMG_0920.HEIC" style="left:1595px;top:602px;width:260px;--r:0.69deg"><img src="archive-media/011.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/012.jpg" aria-label="IMG_1055.JPG" style="left:2200px;top:535px;width:266px;--r:2.14deg"><img src="archive-media/012.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/013.jpg" aria-label="IMG_1245.HEIC" style="left:2988px;top:571px;width:255px;--r:-4.71deg"><img src="archive-media/013.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/014.jpg" aria-label="IMG_1246.JPG" style="left:3548px;top:535px;width:334px;--r:4.82deg"><img src="archive-media/014.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/015.jpg" aria-label="IMG_1419.JPG" style="left:4407px;top:514px;width:451px;--r:-2.10deg"><img src="archive-media/015.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/016.jpg" aria-label="IMG_1470.HEIC" style="left:4948px;top:586px;width:258px;--r:4.29deg"><img src="archive-media/016.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/017.jpg" aria-label="IMG_1479.heic" style="left:63px;top:1070px;width:359px;--r:-5.29deg"><img src="archive-media/017.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/018.jpg" aria-label="IMG_1499.JPG" style="left:876px;top:1046px;width:473px;--r:-2.09deg"><img src="archive-media/018.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/019.jpg" aria-label="IMG_1500.JPG" style="left:1437px;top:908px;width:380px;--r:-1.34deg"><img src="archive-media/019.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/020.jpg" aria-label="IMG_1578.HEIC" style="left:2152px;top:990px;width:286px;--r:2.97deg"><img src="archive-media/020.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/021.jpg" aria-label="IMG_1693.JPG" style="left:2937px;top:1061px;width:537px;--r:-2.59deg"><img src="archive-media/021.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/022.jpg" aria-label="IMG_1845.heic" style="left:3886px;top:1081px;width:261px;--r:-4.73deg"><img src="archive-media/022.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/023.jpg" aria-label="IMG_1932.HEIC" style="left:4389px;top:1095px;width:353px;--r:-2.19deg"><img src="archive-media/023.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/024.jpg" aria-label="IMG_1933.JPG" style="left:5106px;top:1028px;width:532px;--r:-2.78deg"><img src="archive-media/024.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/025.jpg" aria-label="IMG_2128.JPG" style="left:24px;top:1480px;width:308px;--r:-3.18deg"><img src="archive-media/025.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/026.jpg" aria-label="IMG_2164.HEIC" style="left:733px;top:1527px;width:341px;--r:0.23deg"><img src="archive-media/026.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/027.jpg" aria-label="IMG_2180.JPG" style="left:1603px;top:1509px;width:269px;--r:1.10deg"><img src="archive-media/027.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/028.jpg" aria-label="IMG_2268.heic" style="left:2179px;top:1416px;width:348px;--r:4.35deg"><img src="archive-media/028.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/029.jpg" aria-label="IMG_2332.HEIC" style="left:3150px;top:1577px;width:327px;--r:-4.35deg"><img src="archive-media/029.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/030.jpg" aria-label="IMG_2340.JPG" style="left:3629px;top:1502px;width:468px;--r:-1.72deg"><img src="archive-media/030.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/031.jpg" aria-label="IMG_2410.HEIC" style="left:4304px;top:1541px;width:268px;--r:-2.14deg"><img src="archive-media/031.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/032.jpg" aria-label="IMG_2458.JPG" style="left:5035px;top:1541px;width:283px;--r:1.88deg"><img src="archive-media/032.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/033.jpg" aria-label="IMG_2567.JPG" style="left:148px;top:2013px;width:317px;--r:1.82deg"><img src="archive-media/033.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/034.jpg" aria-label="IMG_2568.JPG" style="left:876px;top:1998px;width:279px;--r:1.41deg"><img src="archive-media/034.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/035.jpg" aria-label="IMG_2606.HEIC" style="left:1589px;top:2048px;width:291px;--r:-3.63deg"><img src="archive-media/035.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/036.jpg" aria-label="IMG_2636.JPG" style="left:2391px;top:1996px;width:291px;--r:0.02deg"><img src="archive-media/036.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/037.jpg" aria-label="IMG_2641.JPG" style="left:2996px;top:1987px;width:262px;--r:5.02deg"><img src="archive-media/037.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/038.jpg" aria-label="IMG_2647.JPG" style="left:3695px;top:2006px;width:332px;--r:2.59deg"><img src="archive-media/038.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/039.jpg" aria-label="IMG_2689.HEIC" style="left:4373px;top:2016px;width:452px;--r:-5.36deg"><img src="archive-media/039.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/040.jpg" aria-label="IMG_2705.JPG" style="left:5000px;top:2065px;width:323px;--r:-1.52deg"><img src="archive-media/040.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/041.jpg" aria-label="IMG_2730.HEIC" style="left:135px;top:2473px;width:316px;--r:1.83deg"><img src="archive-media/041.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/042.jpg" aria-label="IMG_2744.JPG" style="left:723px;top:2489px;width:320px;--r:-4.28deg"><img src="archive-media/042.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/043.jpg" aria-label="IMG_2745.HEIC" style="left:1728px;top:2549px;width:359px;--r:0.87deg"><img src="archive-media/043.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/044.jpg" aria-label="IMG_2896.HEIC" style="left:2278px;top:2550px;width:329px;--r:2.88deg"><img src="archive-media/044.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/045.jpg" aria-label="IMG_2905.JPG" style="left:2862px;top:2475px;width:441px;--r:-5.01deg"><img src="archive-media/045.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/046.jpg" aria-label="IMG_2906.HEIC" style="left:3586px;top:2435px;width:367px;--r:-1.72deg"><img src="archive-media/046.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/047.jpg" aria-label="IMG_2913.JPG" style="left:4349px;top:2467px;width:284px;--r:-1.47deg"><img src="archive-media/047.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/048.jpg" aria-label="IMG_2953.JPG" style="left:4936px;top:2492px;width:597px;--r:0.61deg"><img src="archive-media/048.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/049.jpg" aria-label="IMG_2972.JPG" style="left:181px;top:3007px;width:351px;--r:3.63deg"><img src="archive-media/049.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/050.jpg" aria-label="IMG_3002.HEIC" style="left:1028px;top:2974px;width:335px;--r:4.40deg"><img src="archive-media/050.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/051.jpg" aria-label="IMG_3057.JPG" style="left:1497px;top:2938px;width:347px;--r:2.30deg"><img src="archive-media/051.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/052.jpg" aria-label="IMG_3079.JPG" style="left:2174px;top:3025px;width:378px;--r:-1.83deg"><img src="archive-media/052.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/053.jpg" aria-label="IMG_3146.JPG" style="left:2916px;top:2994px;width:292px;--r:3.66deg"><img src="archive-media/053.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/054.jpg" aria-label="IMG_3186.JPG" style="left:3684px;top:2940px;width:408px;--r:-1.22deg"><img src="archive-media/054.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/055.jpg" aria-label="IMG_3191.JPG" style="left:4341px;top:2942px;width:422px;--r:-0.44deg"><img src="archive-media/055.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/056.jpg" aria-label="IMG_3351.JPG" style="left:5009px;top:3045px;width:305px;--r:-2.11deg"><img src="archive-media/056.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/057.jpg" aria-label="PICT0019.JPG" style="left:200px;top:3437px;width:541px;--r:-0.88deg"><img src="archive-media/057.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/058.jpg" aria-label="PICT0020.JPG" style="left:744px;top:3529px;width:582px;--r:-4.77deg"><img src="archive-media/058.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/059.jpg" aria-label="PICT0026.JPG" style="left:1578px;top:3498px;width:501px;--r:2.13deg"><img src="archive-media/059.jpg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/060.jpeg" aria-label="PICT0282.JPEG" style="left:2236px;top:3534px;width:537px;--r:1.41deg"><img src="archive-media/060.jpeg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/061.jpeg" aria-label="PICT0291.JPEG" style="left:2965px;top:3479px;width:587px;--r:-0.18deg"><img src="archive-media/061.jpeg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/062.jpeg" aria-label="PICT0307.JPEG" style="left:3643px;top:3488px;width:639px;--r:2.42deg"><img src="archive-media/062.jpeg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/063.jpeg" aria-label="PICT0308.JPEG" style="left:4334px;top:3424px;width:441px;--r:4.47deg"><img src="archive-media/063.jpeg" alt="" loading="lazy" decoding="async" draggable="false"></button>
-<button class="photo" data-src="archive-media/064.jpeg" aria-label="PICT0316.JPEG" style="left:5188px;top:3426px;width:621px;--r:5.48deg"><img src="archive-media/064.jpeg" alt="" loading="lazy" decoding="async" draggable="false"></button></div></div><div class="controls"><button id="minus">−</button><button id="plus">+</button></div><div class="viewer" id="viewer"><button class="close">×</button><img id="viewerImage" src="" alt=""></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3">
+<title>ARCHIVE - Home is Here</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{
+  background:#d8cfad;color:#111;font-family:Arial,Helvetica,sans-serif;
+  touch-action:none;user-select:none;-webkit-user-select:none
+}
+.topbar{
+  position:fixed;inset:0 0 auto 0;height:66px;z-index:80;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 22px;pointer-events:none
+}
+.topbar a,.hint{
+  pointer-events:auto;color:#111;text-decoration:none;font-size:10px;
+  letter-spacing:.15em;background:rgba(216,207,173,.74);padding:7px 9px
+}
+.viewport{position:fixed;inset:0;overflow:hidden;cursor:grab}
+.viewport.dragging{cursor:grabbing}
+.world{
+  position:absolute;left:0;top:0;width:4000px;height:2450px;
+  transform-origin:0 0;will-change:transform;contain:layout paint style
+}
+.photo{
+  position:absolute;padding:0;border:0;background:transparent;cursor:zoom-in;
+  transform:rotate(var(--r));transform-origin:center;contain:layout paint;
+}
+.photo img{
+  display:block;width:100%;height:auto;pointer-events:none;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden
+}
+@media(hover:hover){
+  .photo:hover{filter:brightness(.94)}
+}
+.viewer{
+  position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.92);
+  display:none;align-items:center;justify-content:center;padding:18px;cursor:zoom-out
+}
+.viewer.open{display:flex}
+.viewer img{max-width:95vw;max-height:94vh;object-fit:contain}
+.close{
+  position:fixed;top:13px;right:18px;border:0;background:none;color:#fff;
+  font-size:32px;cursor:pointer
+}
+.controls{
+  position:fixed;right:16px;bottom:14px;z-index:90;display:flex;gap:5px
+}
+.controls button{
+  width:36px;height:36px;border:1px solid rgba(0,0,0,.38);
+  background:rgba(216,207,173,.82);font-size:18px;cursor:pointer
+}
+@media(max-width:700px){
+  .topbar{height:56px;padding:0 12px}
+  .topbar a,.hint{font-size:9px;padding:6px 7px}
+  .controls{right:10px;bottom:10px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html">← HOME</a>
+  <div class="hint">DRAG TO EXPLORE</div>
+</div>
+
+<div class="viewport" id="viewport">
+  <div class="world" id="world">
+    <button class="photo" data-full="archive-media/001.jpg" style="left:-15px;top:-20px;width:399px;--r:1.27deg;z-index:5">
+<img src="archive-thumbs/001.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/002.jpeg" style="left:364px;top:31px;width:381px;--r:-0.13deg;z-index:5">
+<img src="archive-thumbs/002.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/003.jpg" style="left:915px;top:-20px;width:274px;--r:3.22deg;z-index:5">
+<img src="archive-thumbs/003.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/004.jpg" style="left:1383px;top:-10px;width:387px;--r:5.11deg;z-index:5">
+<img src="archive-thumbs/004.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/005.jpg" style="left:1770px;top:-12px;width:287px;--r:-3.64deg;z-index:2">
+<img src="archive-thumbs/005.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/006.jpeg" style="left:2169px;top:-20px;width:287px;--r:2.44deg;z-index:2">
+<img src="archive-thumbs/006.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/007.jpeg" style="left:2750px;top:30px;width:235px;--r:0.28deg;z-index:4">
+<img src="archive-thumbs/007.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/008.jpeg" style="left:3066px;top:-20px;width:287px;--r:-1.81deg;z-index:2">
+<img src="archive-thumbs/008.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/009.jpg" style="left:3546px;top:-20px;width:301px;--r:4.50deg;z-index:5">
+<img src="archive-thumbs/009.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/010.jpg" style="left:-30px;top:291px;width:279px;--r:-4.40deg;z-index:2">
+<img src="archive-thumbs/010.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/011.jpg" style="left:416px;top:232px;width:253px;--r:-3.02deg;z-index:4">
+<img src="archive-thumbs/011.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/012.jpg" style="left:932px;top:387px;width:400px;--r:0.66deg;z-index:5">
+<img src="archive-thumbs/012.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/013.jpg" style="left:1346px;top:381px;width:257px;--r:-4.12deg;z-index:1">
+<img src="archive-thumbs/013.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/014.jpg" style="left:1750px;top:330px;width:283px;--r:0.31deg;z-index:2">
+<img src="archive-thumbs/014.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/015.jpg" style="left:2159px;top:326px;width:355px;--r:-4.80deg;z-index:3">
+<img src="archive-thumbs/015.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/016.jpg" style="left:2679px;top:240px;width:312px;--r:-4.51deg;z-index:2">
+<img src="archive-thumbs/016.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/017.jpg" style="left:3105px;top:294px;width:272px;--r:1.02deg;z-index:4">
+<img src="archive-thumbs/017.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/018.jpg" style="left:3615px;top:240px;width:357px;--r:3.72deg;z-index:3">
+<img src="archive-thumbs/018.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/019.jpg" style="left:-6px;top:682px;width:333px;--r:4.10deg;z-index:1">
+<img src="archive-thumbs/019.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/020.jpg" style="left:387px;top:691px;width:250px;--r:-4.59deg;z-index:1">
+<img src="archive-thumbs/020.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/021.jpg" style="left:809px;top:626px;width:377px;--r:-4.55deg;z-index:5">
+<img src="archive-thumbs/021.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/022.jpg" style="left:1397px;top:682px;width:223px;--r:3.92deg;z-index:3">
+<img src="archive-thumbs/022.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/023.jpg" style="left:1700px;top:610px;width:397px;--r:-4.42deg;z-index:3">
+<img src="archive-thumbs/023.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/024.jpg" style="left:2251px;top:673px;width:386px;--r:1.33deg;z-index:3">
+<img src="archive-thumbs/024.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/025.jpg" style="left:2645px;top:639px;width:249px;--r:4.01deg;z-index:3">
+<img src="archive-thumbs/025.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/026.jpg" style="left:3052px;top:637px;width:299px;--r:-2.41deg;z-index:5">
+<img src="archive-thumbs/026.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/027.jpg" style="left:3475px;top:651px;width:276px;--r:1.51deg;z-index:3">
+<img src="archive-thumbs/027.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/028.jpg" style="left:35px;top:962px;width:289px;--r:2.68deg;z-index:1">
+<img src="archive-thumbs/028.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/029.jpg" style="left:400px;top:971px;width:305px;--r:-1.34deg;z-index:5">
+<img src="archive-thumbs/029.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/030.jpg" style="left:819px;top:998px;width:339px;--r:-3.86deg;z-index:1">
+<img src="archive-thumbs/030.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/031.jpg" style="left:1309px;top:836px;width:305px;--r:-0.11deg;z-index:1">
+<img src="archive-thumbs/031.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/032.jpg" style="left:1731px;top:925px;width:301px;--r:2.05deg;z-index:2">
+<img src="archive-thumbs/032.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/033.jpg" style="left:2248px;top:923px;width:363px;--r:0.41deg;z-index:1">
+<img src="archive-thumbs/033.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/034.jpg" style="left:2721px;top:988px;width:359px;--r:2.33deg;z-index:3">
+<img src="archive-thumbs/034.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/035.jpg" style="left:3021px;top:981px;width:256px;--r:0.31deg;z-index:2">
+<img src="archive-thumbs/035.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/036.jpg" style="left:3576px;top:898px;width:270px;--r:3.53deg;z-index:4">
+<img src="archive-thumbs/036.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/037.jpg" style="left:66px;top:1205px;width:284px;--r:-1.10deg;z-index:5">
+<img src="archive-thumbs/037.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/038.jpg" style="left:522px;top:1282px;width:276px;--r:5.12deg;z-index:5">
+<img src="archive-thumbs/038.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/039.jpg" style="left:970px;top:1282px;width:358px;--r:-3.42deg;z-index:1">
+<img src="archive-thumbs/039.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/040.jpg" style="left:1253px;top:1199px;width:222px;--r:3.08deg;z-index:3">
+<img src="archive-thumbs/040.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/041.jpg" style="left:1690px;top:1294px;width:266px;--r:-4.25deg;z-index:4">
+<img src="archive-thumbs/041.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/042.jpg" style="left:2273px;top:1205px;width:290px;--r:1.82deg;z-index:5">
+<img src="archive-thumbs/042.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/043.jpg" style="left:2650px;top:1146px;width:257px;--r:-5.01deg;z-index:3">
+<img src="archive-thumbs/043.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/044.jpg" style="left:3200px;top:1279px;width:216px;--r:2.71deg;z-index:3">
+<img src="archive-thumbs/044.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/045.jpg" style="left:3542px;top:1247px;width:433px;--r:-1.97deg;z-index:3">
+<img src="archive-thumbs/045.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/046.jpg" style="left:60px;top:1590px;width:316px;--r:4.60deg;z-index:4">
+<img src="archive-thumbs/046.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/047.jpg" style="left:507px;top:1558px;width:258px;--r:-2.10deg;z-index:5">
+<img src="archive-thumbs/047.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/048.jpg" style="left:796px;top:1477px;width:302px;--r:-2.67deg;z-index:5">
+<img src="archive-thumbs/048.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/049.jpg" style="left:1309px;top:1584px;width:293px;--r:5.04deg;z-index:1">
+<img src="archive-thumbs/049.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/050.jpg" style="left:1792px;top:1524px;width:272px;--r:-4.32deg;z-index:2">
+<img src="archive-thumbs/050.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/051.jpg" style="left:2268px;top:1489px;width:239px;--r:3.35deg;z-index:1">
+<img src="archive-thumbs/051.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/052.jpg" style="left:2629px;top:1511px;width:314px;--r:-5.00deg;z-index:3">
+<img src="archive-thumbs/052.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/053.jpg" style="left:3122px;top:1609px;width:242px;--r:-3.11deg;z-index:4">
+<img src="archive-thumbs/053.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/054.jpg" style="left:3464px;top:1540px;width:390px;--r:-0.61deg;z-index:1">
+<img src="archive-thumbs/054.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/055.jpg" style="left:-30px;top:1823px;width:310px;--r:0.33deg;z-index:1">
+<img src="archive-thumbs/055.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/056.jpg" style="left:350px;top:1845px;width:376px;--r:-3.61deg;z-index:1">
+<img src="archive-thumbs/056.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/057.jpg" style="left:819px;top:1848px;width:308px;--r:-0.60deg;z-index:3">
+<img src="archive-thumbs/057.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/058.jpg" style="left:1353px;top:1847px;width:380px;--r:-0.60deg;z-index:3">
+<img src="archive-thumbs/058.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/059.jpg" style="left:1820px;top:1880px;width:383px;--r:-2.42deg;z-index:1">
+<img src="archive-thumbs/059.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/060.jpeg" style="left:2267px;top:1898px;width:319px;--r:-2.28deg;z-index:1">
+<img src="archive-thumbs/060.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/061.jpeg" style="left:2626px;top:1775px;width:305px;--r:1.85deg;z-index:1">
+<img src="archive-thumbs/061.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/062.jpeg" style="left:3041px;top:1862px;width:388px;--r:0.66deg;z-index:5">
+<img src="archive-thumbs/062.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/063.jpeg" style="left:3560px;top:1821px;width:281px;--r:-2.86deg;z-index:4">
+<img src="archive-thumbs/063.jpg" alt="" decoding="async" draggable="false">
+</button><button class="photo" data-full="archive-media/064.jpeg" style="left:-30px;top:2120px;width:389px;--r:0.55deg;z-index:3">
+<img src="archive-thumbs/064.jpg" alt="" decoding="async" draggable="false">
+</button>
+  </div>
+</div>
+
+<div class="controls">
+  <button id="minus" aria-label="zoom out">−</button>
+  <button id="plus" aria-label="zoom in">+</button>
+</div>
+
+<div class="viewer" id="viewer">
+  <button class="close" aria-label="close">×</button>
+  <img id="viewerImage" src="" alt="">
+</div>
+
 <script>
-const viewport=document.getElementById('viewport'),world=document.getElementById('world');const WORLD_W=5600,WORLD_H=3900;let scale=Math.max(.56,Math.min(.9,innerWidth/1650));let x=(innerWidth-WORLD_W*scale)/2,y=(innerHeight-WORLD_H*scale)/2;let dragging=false,startX=0,startY=0,baseX=0,baseY=0;
-function clamp(){const m=160,minX=innerWidth-WORLD_W*scale-m,maxX=m,minY=innerHeight-WORLD_H*scale-m,maxY=m;x=Math.min(maxX,Math.max(minX,x));y=Math.min(maxY,Math.max(minY,y));}function render(){clamp();world.style.transform=`translate(${x}px,${y}px) scale(${scale})`}function zoomAt(f,cx=innerWidth/2,cy=innerHeight/2){const old=scale;scale=Math.max(.35,Math.min(1.35,scale*f));x=cx-(cx-x)*(scale/old);y=cy-(cy-y)*(scale/old);render()}
-viewport.addEventListener('pointerdown',e=>{if(e.target.closest('.photo'))return;dragging=true;startX=e.clientX;startY=e.clientY;baseX=x;baseY=y;viewport.classList.add('dragging');viewport.setPointerCapture(e.pointerId)});viewport.addEventListener('pointermove',e=>{if(!dragging)return;x=baseX+e.clientX-startX;y=baseY+e.clientY-startY;render()});viewport.addEventListener('pointerup',()=>{dragging=false;viewport.classList.remove('dragging')});viewport.addEventListener('wheel',e=>{e.preventDefault();if(e.ctrlKey||e.metaKey)zoomAt(e.deltaY<0?1.08:.92,e.clientX,e.clientY);else{x-=e.deltaX;y-=e.deltaY;render()}},{passive:false});
-document.querySelectorAll('.photo').forEach(p=>{let pd=false,sx=0,sy=0,bx=0,by=0,pm=false;p.addEventListener('pointerdown',e=>{e.preventDefault();pd=true;pm=false;sx=e.clientX;sy=e.clientY;bx=x;by=y;p.setPointerCapture(e.pointerId);viewport.classList.add('dragging')});p.addEventListener('pointermove',e=>{if(!pd)return;const dx=e.clientX-sx,dy=e.clientY-sy;if(Math.hypot(dx,dy)>5)pm=true;if(pm){x=bx+dx;y=by+dy;render()}});p.addEventListener('pointerup',()=>{pd=false;viewport.classList.remove('dragging');if(!pm)openViewer(p.dataset.src)})});
-const viewer=document.getElementById('viewer'),viewerImage=document.getElementById('viewerImage');function openViewer(src){viewerImage.src=src;viewer.classList.add('open')}function closeViewer(){viewer.classList.remove('open');viewerImage.src=''}viewer.addEventListener('click',closeViewer);document.querySelector('.close').addEventListener('click',e=>{e.stopPropagation();closeViewer()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeViewer()});document.getElementById('plus').onclick=()=>zoomAt(1.15);document.getElementById('minus').onclick=()=>zoomAt(.87);addEventListener('resize',render);render();
-</script></body></html>
+const viewport = document.getElementById('viewport');
+const world = document.getElementById('world');
+const WORLD_W = 4000;
+const WORLD_H = 2450;
+
+let scale = Math.max(.48, Math.min(.78, innerWidth / 1700));
+let x = (innerWidth - WORLD_W * scale) / 2;
+let y = (innerHeight - WORLD_H * scale) / 2;
+
+let targetX = x, targetY = y;
+let dragging = false;
+let startX = 0, startY = 0, baseX = 0, baseY = 0;
+let raf = 0;
+
+function clampTargets() {
+  const m = 130;
+  const minX = innerWidth - WORLD_W * scale - m;
+  const maxX = m;
+  const minY = innerHeight - WORLD_H * scale - m;
+  const maxY = m;
+  targetX = Math.min(maxX, Math.max(minX, targetX));
+  targetY = Math.min(maxY, Math.max(minY, targetY));
+}
+
+function scheduleRender() {
+  if (raf) return;
+  raf = requestAnimationFrame(() => {
+    raf = 0;
+    clampTargets();
+    x = targetX;
+    y = targetY;
+    world.style.transform = `translate3d(${x}px,${y}px,0) scale(${scale})`;
+  });
+}
+
+function zoomAt(factor, cx=innerWidth/2, cy=innerHeight/2) {
+  const old = scale;
+  scale = Math.max(.34, Math.min(1.25, scale * factor));
+  targetX = cx - (cx - targetX) * (scale / old);
+  targetY = cy - (cy - targetY) * (scale / old);
+  scheduleRender();
+}
+
+function beginDrag(e) {
+  dragging = true;
+  startX = e.clientX;
+  startY = e.clientY;
+  baseX = targetX;
+  baseY = targetY;
+  viewport.classList.add('dragging');
+  viewport.setPointerCapture?.(e.pointerId);
+}
+
+viewport.addEventListener('pointerdown', e => {
+  if (e.target.closest('.photo')) return;
+  beginDrag(e);
+});
+
+viewport.addEventListener('pointermove', e => {
+  if (!dragging) return;
+  targetX = baseX + e.clientX - startX;
+  targetY = baseY + e.clientY - startY;
+  scheduleRender();
+});
+
+function endDrag() {
+  dragging = false;
+  viewport.classList.remove('dragging');
+}
+viewport.addEventListener('pointerup', endDrag);
+viewport.addEventListener('pointercancel', endDrag);
+
+viewport.addEventListener('wheel', e => {
+  e.preventDefault();
+  if (e.ctrlKey || e.metaKey) {
+    zoomAt(e.deltaY < 0 ? 1.07 : .935, e.clientX, e.clientY);
+  } else {
+    targetX -= e.deltaX;
+    targetY -= e.deltaY;
+    scheduleRender();
+  }
+}, {passive:false});
+
+document.querySelectorAll('.photo').forEach(photo => {
+  let down = false, moved = false, sx = 0, sy = 0, bx = 0, by = 0;
+
+  photo.addEventListener('pointerdown', e => {
+    e.preventDefault();
+    down = true;
+    moved = false;
+    sx = e.clientX;
+    sy = e.clientY;
+    bx = targetX;
+    by = targetY;
+    photo.setPointerCapture?.(e.pointerId);
+    viewport.classList.add('dragging');
+  });
+
+  photo.addEventListener('pointermove', e => {
+    if (!down) return;
+    const dx = e.clientX - sx;
+    const dy = e.clientY - sy;
+    if (Math.hypot(dx,dy) > 7) moved = true;
+    if (moved) {
+      targetX = bx + dx;
+      targetY = by + dy;
+      scheduleRender();
+    }
+  });
+
+  photo.addEventListener('pointerup', () => {
+    down = false;
+    viewport.classList.remove('dragging');
+    if (!moved) openViewer(photo.dataset.full);
+  });
+
+  photo.addEventListener('pointercancel', () => {
+    down = false;
+    viewport.classList.remove('dragging');
+  });
+});
+
+const viewer = document.getElementById('viewer');
+const viewerImage = document.getElementById('viewerImage');
+
+function openViewer(src) {
+  viewerImage.src = src;
+  viewer.classList.add('open');
+}
+function closeViewer() {
+  viewer.classList.remove('open');
+  viewerImage.src = '';
+}
+viewer.addEventListener('click', closeViewer);
+document.querySelector('.close').addEventListener('click', e => {
+  e.stopPropagation();
+  closeViewer();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeViewer();
+});
+
+document.getElementById('plus').onclick = () => zoomAt(1.14);
+document.getElementById('minus').onclick = () => zoomAt(.88);
+
+addEventListener('resize', () => {
+  scheduleRender();
+});
+
+scheduleRender();
+</script>
+</body>
+</html>
