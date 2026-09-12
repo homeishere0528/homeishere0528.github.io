@@ -11,14 +11,42 @@ body{background:#d8cfad;color:#111;font-family:Arial,Helvetica,sans-serif}
 .page{min-height:100vh;padding:36px 5vw 60px}
 .back{display:inline-block;margin-bottom:48px;text-decoration:none;color:#111;font-size:12px;letter-spacing:.14em}
 h1{margin:0 0 48px;font-size:clamp(38px,6vw,86px);font-weight:400}
+
 .live-list{border-top:1px solid rgba(0,0,0,.45)}
 .live-item{
-  width:100%;border:0;border-bottom:1px solid rgba(0,0,0,.45);
-  background:transparent;padding:28px 0 30px;text-align:left;cursor:pointer;color:#111
+  border-bottom:1px solid rgba(0,0,0,.45);
+  padding:28px 0 30px;
 }
-.live-item:hover{opacity:.55}
+.live-info{
+  width:100%;
+  border:0;
+  background:transparent;
+  padding:0;
+  text-align:left;
+  cursor:pointer;
+  color:#111;
+}
+.live-info:hover{opacity:.55}
 .date{display:block;font-size:clamp(24px,3vw,42px);margin-bottom:10px;font-weight:400}
 .venue,.title{display:block;line-height:1.65;font-size:clamp(14px,1.6vw,20px)}
+
+.actions{
+  margin-top:18px;
+  display:flex;
+  gap:18px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.action{
+  color:#111;
+  text-decoration:none;
+  border-bottom:1px solid #111;
+  padding-bottom:2px;
+  font-size:12px;
+  letter-spacing:.13em;
+}
+.action:hover{opacity:.5}
+
 .modal{
   position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.84);
   display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out
@@ -29,6 +57,7 @@ h1{margin:0 0 48px;font-size:clamp(38px,6vw,86px);font-weight:400}
   position:fixed;top:18px;right:22px;border:0;background:transparent;
   color:#fff;font-size:30px;cursor:pointer
 }
+
 @media(max-width:700px){
   .page{padding:24px 22px 44px}
   .back{margin-bottom:34px}
@@ -41,17 +70,35 @@ h1{margin:0 0 48px;font-size:clamp(38px,6vw,86px);font-weight:400}
   <h1>LIVE</h1>
 
   <div class="live-list">
-    <button class="live-item" data-flyer="flyer_20261028.jpg">
-      <span class="date">2026.10.28 (Wed)</span>
-      <span class="venue">心斎橋 Pangea</span>
-      <span class="title">THE WORLD IS MINE 91</span>
-    </button>
 
-    <button class="live-item" data-flyer="flyer_20261111.png">
-      <span class="date">2026.11.11 (Wed)</span>
-      <span class="venue">live house nano</span>
-      <span class="title">Home is Here 1st EP「開閉」Release Party「心の家 (kocorono uchi)」</span>
-    </button>
+    <section class="live-item">
+      <button class="live-info" data-flyer="flyer_20261028.jpg">
+        <span class="date">2026.10.28 (Wed)</span>
+        <span class="venue">心斎橋 Pangea</span>
+        <span class="title">THE WORLD IS MINE 91</span>
+      </button>
+      <div class="actions">
+        <a class="action"
+           href="https://docs.google.com/forms/d/1wXdsndPKxOCVECMJI273L5gjXgyim9fHekj7AgRyQIA/viewform"
+           target="_blank"
+           rel="noopener noreferrer">TICKET</a>
+      </div>
+    </section>
+
+    <section class="live-item">
+      <button class="live-info" data-flyer="flyer_20261111.png">
+        <span class="date">2026.11.11 (Wed)</span>
+        <span class="venue">live house nano</span>
+        <span class="title">Home is Here 1st EP「開閉」Release Party「心の家 (kocorono uchi)」</span>
+      </button>
+      <div class="actions">
+        <a class="action"
+           href="https://docs.google.com/forms/d/1aB1Ztga1jIgvm3Td05Luul6plhK-m8tGvlVpJaWyK2E/viewform?hl=ja"
+           target="_blank"
+           rel="noopener noreferrer">TICKET</a>
+      </div>
+    </section>
+
   </div>
 </main>
 
@@ -63,23 +110,29 @@ h1{margin:0 0 48px;font-size:clamp(38px,6vw,86px);font-weight:400}
 <script>
 const modal=document.getElementById("modal");
 const modalImage=document.getElementById("modalImage");
-document.querySelectorAll(".live-item").forEach(item=>{
+
+document.querySelectorAll(".live-info").forEach(item=>{
   item.addEventListener("click",()=>{
     modalImage.src=item.dataset.flyer;
     modal.classList.add("open");
     modal.setAttribute("aria-hidden","false");
   });
 });
+
 function closeModal(){
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden","true");
   modalImage.src="";
 }
+
 modal.addEventListener("click",closeModal);
 document.querySelector(".close").addEventListener("click",e=>{
-  e.stopPropagation(); closeModal();
+  e.stopPropagation();
+  closeModal();
 });
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape")closeModal();
+});
 </script>
 </body>
 </html>
