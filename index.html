@@ -11,20 +11,12 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
       background: #f4f2ed;
       color: #111;
       font-family: Arial, Helvetica, sans-serif;
     }
-
-    /* -------------------------
-       TOP
-    ------------------------- */
 
     .top {
       min-height: 100vh;
@@ -46,112 +38,41 @@
       margin-top: 60px;
     }
 
-    /* -------------------------
-       MENU
-    ------------------------- */
-<nav class="menu">
-  <a href="live.html">LIVE</a>
-  <a href="archive.html">ARCHIVE</a>
-  <a href="music.html">MUSIC</a>
-  <a href="video.html">VIDEO</a>
-</nav>
-    /* -------------------------
-       SECTIONS
-    ------------------------- */
-
-    section {
-      min-height: 100vh;
-      padding: 8vw 7vw;
-      border-top: 1px solid #111;
-    }
-
-    section h2 {
-      font-size: clamp(30px, 5vw, 64px);
-      font-weight: normal;
-      margin: 0 0 60px;
-    }
-
-    /* -------------------------
-       LIVE
-    ------------------------- */
-
-    .live-item {
-      margin-bottom: 40px;
-      line-height: 1.8;
-    }
-
-    /* -------------------------
-       ARCHIVE
-    ------------------------- */
-
-    .archive-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .archive-grid img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* -------------------------
-       MUSIC / VIDEO
-    ------------------------- */
-
-    .link-list {
+    .menu {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
+      gap: 28px;
+      flex-wrap: wrap;
+      padding-top: 80px;
     }
 
-    .link-list a {
+    .menu a {
       color: #111;
-      font-size: clamp(20px, 3vw, 38px);
       text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 0.05em;
     }
 
-    .link-list a:hover {
+    .menu a:hover {
       opacity: 0.5;
     }
 
-    /* -------------------------
-       MOBILE
-    ------------------------- */
-
     @media (max-width: 700px) {
-
       .top {
         padding: 30px 24px;
-      }
-
-      section {
-        padding: 70px 24px;
       }
 
       .menu {
         gap: 18px;
       }
-
-      .archive-grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
 
-
 <body>
-
-  <!-- =========================
-       TOP
-  ========================== -->
 
   <main class="top">
 
     <div>
-
       <h1>Home is Here</h1>
 
       <div class="intro">
@@ -162,115 +83,16 @@
         Thank you.<br>
         Goodbye &amp; good night.
       </div>
-
     </div>
 
-
     <nav class="menu">
-      <a href="#live">LIVE</a>
-      <a href="#archive">ARCHIVE</a>
-      <a href="#music">MUSIC</a>
-      <a href="#video">VIDEO</a>
+      <a href="live.html">LIVE</a>
+      <a href="archive.html">ARCHIVE</a>
+      <a href="music.html">MUSIC</a>
+      <a href="video.html">VIDEO</a>
     </nav>
 
   </main>
-
-
-  <!-- =========================
-       LIVE
-  ========================== -->
-
-  <section id="live">
-
-    <h2>LIVE</h2>
-
-    <div class="live-item">
-      <strong>2026.11.11</strong><br>
-      live house nano<br>
-      Home is Here 1st EP “開閉” Release Party<br>
-      「心の家（kocorono uchi）」<br>
-      OPEN 18:30 / START 19:00
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       ARCHIVE
-  ========================== -->
-
-  <section id="archive">
-
-    <h2>ARCHIVE</h2>
-
-    <div class="archive-grid">
-
-      <!--
-      ↓↓↓ ここに写真を追加していきます ↓↓↓
-
-      例：
-      <img src="images/photo1.jpg" alt="">
-      -->
-
-      <img src="images/photo1.jpg" alt="">
-      <img src="images/photo2.jpg" alt="">
-      <img src="images/photo3.jpg" alt="">
-      <img src="images/photo4.jpg" alt="">
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       MUSIC
-  ========================== -->
-
-  <section id="music">
-
-    <h2>MUSIC</h2>
-
-    <div class="link-list">
-
-      <!-- URLはあとで本物に変更 -->
-
-      <a href="#" target="_blank">
-        TuneCore
-      </a>
-
-      <a href="#" target="_blank">
-        Spotify
-      </a>
-
-      <a href="#" target="_blank">
-        Apple Music
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       VIDEO
-  ========================== -->
-
-  <section id="video">
-
-    <h2>VIDEO</h2>
-
-    <div class="link-list">
-
-      <!-- YouTube URLをあとで入れる -->
-
-      <a href="#" target="_blank">
-        YouTube
-      </a>
-
-    </div>
-
-  </section>
-
 
 </body>
 </html>
